@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="dfa6537e-3314-41f4-a421-a801ff65feef" name="flights" url="http://localhost/CL/Warsztaty/FlightPlan/flights">
+        <fileTransfer port="0" mountedRoot="$USER_HOME$/Workspace/CL/Warsztaty/FlightPlan/flights" accessType="MOUNT" />
+      </webServer>
+    </option>
+  </component>
+</project>
