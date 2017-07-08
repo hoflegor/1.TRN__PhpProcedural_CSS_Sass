@@ -11,6 +11,7 @@
 <?php
 
 require_once ('includes/visits.php');
+require_once ('includes/form.php');
 
 ?>
 
