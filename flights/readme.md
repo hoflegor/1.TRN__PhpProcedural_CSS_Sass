@@ -45,7 +45,7 @@ Celem zadania jest napisanie skryptu, wyświetlającego ostatnie odwiedziny na s
      Zwiększ wartość ciasteczka o `1`
 3. Dołącz do głównego pliku, plik odpowiedzialny za informację o wizytach na stronie.
 
-#### Zadanie 4 - formularz (~30min.)
+#### Zadani4e 4 - formularz (~30min.)
  
  Celem zadania jest stworzenie formularza do generowania biletu lotniczego.  
  

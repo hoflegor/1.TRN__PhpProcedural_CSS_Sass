@@ -1,6 +1,3 @@
-<html>
-<body>
-
 <form action="../pdf.php" method="post" role="form">
 <!--    TODO index nie widzi pdf, zła ścieżka-->
     <label>
@@ -11,7 +8,7 @@
 
             require_once ('functions.php');
 
-            echo airports();
+            airports();
 
             ?>
         </select>
@@ -42,6 +39,3 @@
     <hr>
     <input type="submit" value="Wyślij">
 </form>
-
-</body>
-</html>

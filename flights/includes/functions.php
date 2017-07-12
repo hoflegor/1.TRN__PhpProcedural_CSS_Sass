@@ -1,8 +1,9 @@
 <?php
 
-function airports(){
+function airports()
+{
 
-    require ('airports.php');
+    require('airports.php');
 
     foreach ($airports as $airport) {
 
@@ -14,19 +15,42 @@ function airports(){
 
 }
 
-function tzByCode($code){
+
+function tzByCode($code)
+{
 
     require('airports.php');
 
     foreach ($airports as $airport) {
-        foreach ($airport as $key => $value ){
+        foreach ($airport as $key => $value) {
 
-            if ($value == $code){
-                $tz =  $airport['timezone'];
+            if ($value == $code) {
+                $tz = $airport['timezone'];
 
             }
         }
     }
     return $tz;
 }
+
+
+function nameByCode($code)
+{
+
+    require('airports.php');
+
+    foreach ($airports as $airport) {
+        foreach ($airport as $key => $value) {
+
+            if ($value == $code) {
+                $airportName = $airport['name'];
+
+            }
+        }
+    }
+    return $airportName;
+}
+
+
+//TODO one function
 
