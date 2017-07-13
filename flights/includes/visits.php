@@ -6,7 +6,6 @@ if (!isset($_COOKIE['visits'])){
 
     setcookie('visits', 1 , strtotime("+ 1 year"));
 
-
 }
 
 
@@ -17,7 +16,6 @@ else{
     echo ("<h4>Witaj, odwiedziłeś nas już $visits razy!!</h4>");
 
     setcookie('visits', $visits , strtotime("+ 1 year"));
-
 
 }
 
