@@ -1,6 +1,9 @@
 <?php
 
+use NumberToWords\NumberToWords;
+
 require_once('includes/functions.php');
+require_once('vendor/autoload.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 //Sprawdzanie lotnisk
@@ -80,7 +83,7 @@ if (isset($departure)
     isset($flightLength)
     &&
     isset($price)
-){
+) {
     $depName = nameByCode($departure);
 
     $arName = nameByCode($arrival);
@@ -100,7 +103,49 @@ if (isset($departure)
     $endDT->setTimezone($arLocal);
     $endDate = $endDT->format('d.m.Y / G:i:s');
 //    var_dump($endDate);
-//TODO style do style.css
+
+//    Generowanie imienia i nazwiska pasażera przez bibliotekę faker
+    $faker = Faker\Factory::create();
+    $passanger = $faker->name;
+
+//    Generowanie ceny lotu słownie przez bibliotekę number-to-words
+    $numberToWords = new NumberToWords();
+    $numberTransformer = $numberToWords->getNumberTransformer('pl');
+
+    $priceExpld = explode(".", $price);
+
+    if( $priceExpld[0] == '1'){
+        $priceFirstVal = 'złoty';
+    }
+    elseif (substr($priceExpld[0],-1) == '2'
+        || substr($priceExpld[0],-1) == '3'
+        || substr($priceExpld[0],-1) == '4'){
+        $priceFirstVal = 'złote';
+    }
+    else{
+        $priceFirstVal = 'złotych';
+    }
+
+    if( $priceExpld[1] == '1'){
+        $priceSecondVal = 'grosz';
+    }
+    elseif (substr($priceExpld[1],-1) == '2'
+        || substr($priceExpld[1],-1) == '3'
+        || substr($priceExpld[1],-1) == '4'){
+        $priceSecondVal = 'grosze';
+    }
+    else{
+        $priceSecondVal = 'groszy';
+    }
+
+    $priceFirstPrt = $numberTransformer->toWords($priceExpld[0]) .
+        " " . $priceFirstVal;
+    var_dump($priceFirstPrt);
+    $priceSecondPrt = $numberTransformer->toWords($priceExpld[1]) .
+        " " . $priceSecondVal;
+    var_dump($priceSecondPrt);
+
+//TODO style do style.css czy ok?
 //    TODO echo tabeli, inna metoda
     echo "
     <link rel='stylesheet' href='css/style.css'>
@@ -144,7 +189,14 @@ if (isset($departure)
             <th scope='col' colspan='2'><ins>Cena lotu (PLN):</ins></th>
         </tr>
         <tr>
-            <td colspan='2'>$price PLN</td>
+            <td colspan='2'>$price PLN<br>
+            (słownie: $priceFirstPrt $priceSecondPrt)</td>
+        </tr>
+        <tr>
+            <th scope='col' colspan='2'><ins>Imię i nazwisko pasażera:</ins></th>
+        </tr>
+         <tr>
+            <td colspan='2'>$passanger</td>
         </tr>
     </table>
     ";
