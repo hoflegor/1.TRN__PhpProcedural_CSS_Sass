@@ -140,10 +140,10 @@ if (isset($departure)
 
     $priceFirstPrt = $numberTransformer->toWords($priceExpld[0]) .
         " " . $priceFirstVal;
-    var_dump($priceFirstPrt);
+//    var_dump($priceFirstPrt);
     $priceSecondPrt = $numberTransformer->toWords($priceExpld[1]) .
         " " . $priceSecondVal;
-    var_dump($priceSecondPrt);
+//    var_dump($priceSecondPrt);
 
 //TODO style do style.css czy ok?
 //    TODO echo tabeli, inna metoda
