@@ -1,6 +1,6 @@
 <?php
 
-function airports()
+function airportsSelect()
 {
 
     require('airports.php');
@@ -16,8 +16,7 @@ function airports()
 }
 
 
-function tzByCode($code)
-{
+function tzByCode($code){
 
     require('airports.php');
 
@@ -26,7 +25,6 @@ function tzByCode($code)
 
             if ($value == $code) {
                 $tz = $airport['timezone'];
-
             }
         }
     }
@@ -34,8 +32,7 @@ function tzByCode($code)
 }
 
 
-function nameByCode($code)
-{
+function nameByCode($code){
 
     require('airports.php');
 
@@ -44,7 +41,6 @@ function nameByCode($code)
 
             if ($value == $code) {
                 $airportName = $airport['name'];
-
             }
         }
     }

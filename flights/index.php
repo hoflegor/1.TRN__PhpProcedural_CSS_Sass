@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -15,3 +15,5 @@ require_once ('includes/visits.php');
 require_once ('includes/form.php');
 
 ?>
+</body>
+</html>

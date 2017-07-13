@@ -1,5 +1,4 @@
-<form action="../pdf.php" method="post" role="form">
-<!--    TODO index nie widzi pdf, zła ścieżka-->
+<form action="pdf.php" method="post" role="form">
     <label>
         <h2>Lotnisko wylotu:</h2>
         <select name="departure">
@@ -8,7 +7,7 @@
 
             require_once ('functions.php');
 
-            airports();
+            airportsSelect();
 
             ?>
         </select>
@@ -19,7 +18,7 @@
             <option value="">Select...</option>
             <?php
 
-            echo airports();
+            airportsSelect();
 
             ?>
         </select>

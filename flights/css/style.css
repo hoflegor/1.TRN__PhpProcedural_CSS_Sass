@@ -1,4 +1,19 @@
+table {
+    border-collapse: collapse;
+    background-color: #ffc;
+}
+
 th, td {
     border: 1px solid black;
-    padding: 10px 15px;
+    padding: 5px 5px;
+    text-align: center;
+
+}
+
+th {
+    font-weight: bold;
+}
+
+#halfWidth {
+    width: 50%;
 }
