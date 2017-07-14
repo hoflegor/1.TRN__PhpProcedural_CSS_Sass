@@ -119,7 +119,9 @@ if (isset($departure)
 
     $priceExpld = explode(".", $price);
 
-    if ($priceExpld[0] == '1') {
+    if ($priceExpld[0] == '0'){
+        $priceFirstVal = 'zero złotych';
+    } elseif($priceExpld[0] == '1') {
         $priceFirstVal = 'złoty';
     } elseif (substr($priceExpld[0], -1) == '2'
         || substr($priceExpld[0], -1) == '3'
@@ -130,7 +132,9 @@ if (isset($departure)
         $priceFirstVal = 'złotych';
     }
 
-    if ($priceExpld[1] == '1') {
+    if ($priceExpld[1] == '0'){
+        $priceSecondVal = 'zero groszy';
+    } elseif($priceExpld[1] == '1') {
         $priceSecondVal = 'grosz';
     } elseif (substr($priceExpld[1], -1) == '2'
         || substr($priceExpld[1], -1) == '3'
