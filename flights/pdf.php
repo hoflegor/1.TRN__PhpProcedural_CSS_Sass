@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         &&
         $_POST['arrival'] === ''
     ) {
-        echo "<h2>Niepodano lotniska przylotu!!</h2>";
+        echo "<h2>Nie podano lotniska przylotu!!</h2>";
     }
 
     if (isset($_POST['departure']) === true
@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ||
             $_POST['flightLength'] === '0')
     ) {
-        echo "<h2>Nie podano czasu lotu!!";
+        echo "<h2>Nie podano daty i/lub godziny lotu!!";
     } elseif (isset($_POST['flightLength']) === true
         &&
         $_POST['flightLength'] > 0
@@ -70,6 +70,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "<h2>Nie podano ceny lotu!!!</h2>";
     }
 
+//    Sprawdzanie opcji
+    if (!isset($_POST['option'])){
+        echo "<h2>Nie wybrano sposobu wygenerowania biletu!!</h2>";
+    }
+//    var_dump($_POST['option']);
 }
 
 ///Wyświetlanie danych z formularza
@@ -114,27 +119,25 @@ if (isset($departure)
 
     $priceExpld = explode(".", $price);
 
-    if( $priceExpld[0] == '1'){
+    if ($priceExpld[0] == '1') {
         $priceFirstVal = 'złoty';
-    }
-    elseif (substr($priceExpld[0],-1) == '2'
-        || substr($priceExpld[0],-1) == '3'
-        || substr($priceExpld[0],-1) == '4'){
+    } elseif (substr($priceExpld[0], -1) == '2'
+        || substr($priceExpld[0], -1) == '3'
+        || substr($priceExpld[0], -1) == '4'
+    ) {
         $priceFirstVal = 'złote';
-    }
-    else{
+    } else {
         $priceFirstVal = 'złotych';
     }
 
-    if( $priceExpld[1] == '1'){
+    if ($priceExpld[1] == '1') {
         $priceSecondVal = 'grosz';
-    }
-    elseif (substr($priceExpld[1],-1) == '2'
-        || substr($priceExpld[1],-1) == '3'
-        || substr($priceExpld[1],-1) == '4'){
+    } elseif (substr($priceExpld[1], -1) == '2'
+        || substr($priceExpld[1], -1) == '3'
+        || substr($priceExpld[1], -1) == '4'
+    ) {
         $priceSecondVal = 'grosze';
-    }
-    else{
+    } else {
         $priceSecondVal = 'groszy';
     }
 
@@ -147,7 +150,7 @@ if (isset($departure)
 
 //TODO style do style.css czy ok?
 //    TODO echo tabeli, inna metoda
-    echo "
+    $ticket = "
     <link rel='stylesheet' href='css/style.css'>
     <table>
         <tr>
@@ -173,9 +176,6 @@ if (isset($departure)
             (czas lokalny):</ins></th>
         </tr>
         <tr>
-<!--
-//        TODO tz
--->
             <td id='halfWidth'>$startDate<br>($tzDep)</td>
             <td id='halfWidth'>$endDate<br>($tzAr)</td>
         </tr>
@@ -200,5 +200,17 @@ if (isset($departure)
         </tr>
     </table>
     ";
+
+    $mpdf = new mPDF();
+
+    if ($_POST['option'] === 'show') {
+        $mpdf->WriteHTML($ticket);
+        $mpdf->Output('ticket.pdf', 'I');
+    }
+
+    if ($_POST['option'] === 'download') {
+        $mpdf->WriteHTML($ticket);
+        $mpdf->Output('ticket.pdf', 'D');
+    }
 
 }

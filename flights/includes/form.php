@@ -25,7 +25,8 @@
     </label>
     <label>
         <h2>Czas startu:</h2>
-        <input type="datetime-local" name="startTime" >
+        <input type="datetime-local" name="startTime">
+        <!--TODO datetime - local nie działa w ff na chrome ok-->
     </label>
     <label>
         <h2>Długość lotu w godzinach:</h2>
@@ -34,6 +35,11 @@
     <label>
         <h2>Cena lotu:</h2>
         <input type="number" name="price" min="0" step="0.01">
+    </label>
+    <label>
+        <h2>Generowanie biletu:</h2>
+        <input type="radio" name="option" value="show">Pokaż bilet
+        <input type="radio" name="option" value="download">Pobierz bilet
     </label>
     <hr>
     <input type="submit" value="Wyślij">
