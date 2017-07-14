@@ -11,14 +11,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         &&
         $_POST['departure'] === ''
     ) {
-        echo "<h2>Nie podano lotniska odlotu!!</h2>";
+        echo "<h2>* Nie podano lotniska odlotu!!</h2>";
     }
 
     if (isset($_POST['arrival']) === true
         &&
         $_POST['arrival'] === ''
     ) {
-        echo "<h2>Nie podano lotniska przylotu!!</h2>";
+        echo "<h2>* Nie podano lotniska przylotu!!</h2>";
     }
 
     if (isset($_POST['departure']) === true
@@ -33,14 +33,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         && $_POST['arrival'] != ''
     ) {
         echo
-        "<h2>Lotniska wylotu i przylotu nie mogą być takie same!!</h2>";
+        "<h2>* Lotniska wylotu i przylotu nie mogą być takie same!!</h2>";
     }
 //sprawdznie daty
     if (isset($_POST['startTime']) === true
         &&
         $_POST['startTime'] === ''
     ) {
-        echo "<h2>Nie podano daty lotu!!</h2>";
+        echo "<h2>* Nie podano daty lotu!!</h2>";
     } elseif (isset($_POST['startTime']) === true) {
         $startTime = $_POST['startTime'];
     }
@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ||
             $_POST['flightLength'] === '0')
     ) {
-        echo "<h2>Nie podano daty i/lub godziny lotu!!";
+        echo "<h2>* Nie podano daty i/lub godziny lotu!!";
     } elseif (isset($_POST['flightLength']) === true
         &&
         $_POST['flightLength'] > 0
@@ -67,12 +67,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ) {
         $price = $_POST['price'];
     } else {
-        echo "<h2>Nie podano ceny lotu!!!</h2>";
+        echo "<h2>* Nie podano ceny lotu!!!</h2>";
     }
 
 //    Sprawdzanie opcji
     if (!isset($_POST['option'])){
-        echo "<h2>Nie wybrano sposobu wygenerowania biletu!!</h2>";
+        echo "<h2>* Nie wybrano sposobu wygenerowania biletu!!</h2>";
     }
 //    var_dump($_POST['option']);
 }
@@ -118,7 +118,7 @@ if (isset($departure)
     $numberTransformer = $numberToWords->getNumberTransformer('pl');
 
     $priceExpld = explode(".", $price);
-
+/*TODO 0 ZŁ*/
     if ($priceExpld[0] == '0'){
         $priceFirstVal = 'zero złotych';
     } elseif($priceExpld[0] == '1') {

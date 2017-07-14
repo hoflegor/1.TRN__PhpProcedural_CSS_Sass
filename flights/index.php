@@ -9,6 +9,7 @@
 
 </head>
 <body>
+<h1><em>Rezarwacja biletów lotniczych</em></h1>
 <?php
 
 require_once ('includes/visits.php');
