@@ -30,6 +30,7 @@
         <h2>Czas startu:</h2>
         <input type="datetime-local" name="startTime">
         <!--TODO datetime - local nie działa w ff na chrome ok-->
+        <!--TODO Czy można ustawić by po rozwinięciu kalendarza było również pole z wyborem godziny?-->
     </label>
     <hr>
     <label>

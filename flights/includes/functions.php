@@ -48,5 +48,5 @@ function nameByCode($code){
 }
 
 
-//TODO one function
+/*TODO Prawidłowe jest tworzenie pliku functions.php czy lepiej zrobić wszystko w pliku index.php?
 

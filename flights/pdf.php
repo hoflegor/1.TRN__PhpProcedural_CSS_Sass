@@ -118,7 +118,12 @@ if (isset($departure)
     $numberTransformer = $numberToWords->getNumberTransformer('pl');
 
     $priceExpld = explode(".", $price);
-/*TODO 0 ZŁ*/
+/*TODO w przypadku 0zł/0gr ((substr($priceExpld[0], -1) == '0') nie wczytywało zmiennej '0' więc zmieniłem kod na:
+if ($priceExpld[0] == '0'){
+        $priceFirstVal = 'zero złotych';
+Takie rozwiązanie jest OK?
+
+ */
     if ($priceExpld[0] == '0'){
         $priceFirstVal = 'zero złotych';
     } elseif($priceExpld[0] == '1') {
@@ -152,10 +157,10 @@ if (isset($departure)
         " " . $priceSecondVal;
 //    var_dump($priceSecondPrt);
 
-//TODO style do style.css czy ok?
-//    TODO echo tabeli, inna metoda
-    $ticket = "
-    <link rel='stylesheet' href='css/style.css'>
+//TODO Czy poprawnie dodałem style.css w tabeli?
+    $ticket = <<<EOL
+
+<link rel='stylesheet' href='css/style.css'>
     <table>
         <tr>
             <th scope='col' 
@@ -203,7 +208,11 @@ if (isset($departure)
             <td colspan='2'>$passanger</td>
         </tr>
     </table>
-    ";
+
+EOL;
+
+
+
 
     $mpdf = new mPDF();
 
