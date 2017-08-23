@@ -1,1 +1,3 @@
-flights/vendor/
+vendor/
+.idea/
+flight_ticket.pdf

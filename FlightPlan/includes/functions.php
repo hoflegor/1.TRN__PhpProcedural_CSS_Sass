@@ -47,6 +47,3 @@ function nameByCode($code){
     return $airportName;
 }
 
-
-/*TODO Prawidłowe jest tworzenie pliku functions.php czy lepiej zrobić wszystko w pliku index.php?
-

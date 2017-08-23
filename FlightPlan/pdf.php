@@ -11,14 +11,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         &&
         $_POST['departure'] === ''
     ) {
-        echo "<h2>* Nie podano lotniska odlotu!!</h2>";
+        echo "<h2>* Nie podano lotniska odlotu!!!</h2>";
     }
 
     if (isset($_POST['arrival']) === true
         &&
         $_POST['arrival'] === ''
     ) {
-        echo "<h2>* Nie podano lotniska przylotu!!</h2>";
+        echo "<h2>* Nie podano lotniska przylotu!!!</h2>";
     }
 
     if (isset($_POST['departure']) === true
@@ -33,14 +33,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         && $_POST['arrival'] != ''
     ) {
         echo
-        "<h2>* Lotniska wylotu i przylotu nie mogą być takie same!!</h2>";
+        "<h2>* Lotniska wylotu i przylotu nie mogą być takie same!!!</h2>";
     }
 //sprawdznie daty
     if (isset($_POST['startTime']) === true
         &&
         $_POST['startTime'] === ''
     ) {
-        echo "<h2>* Nie podano daty lotu!!</h2>";
+        echo "<h2>* Nie podano daty i/lub godziny lotu!!!</h2>";
     } elseif (isset($_POST['startTime']) === true) {
         $startTime = $_POST['startTime'];
     }
@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ||
             $_POST['flightLength'] === '0')
     ) {
-        echo "<h2>* Nie podano daty i/lub godziny lotu!!";
+        echo "<h2>* Nie podano długości lotu (w godzinach)!!!";
     } elseif (isset($_POST['flightLength']) === true
         &&
         $_POST['flightLength'] > 0
@@ -72,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 //    Sprawdzanie opcji
     if (!isset($_POST['option'])){
-        echo "<h2>* Nie wybrano sposobu wygenerowania biletu!!</h2>";
+        echo "<h2>* Nie wybrano sposobu wygenerowania biletu!!!</h2>";
     }
 //    var_dump($_POST['option']);
 }
@@ -118,12 +118,7 @@ if (isset($departure)
     $numberTransformer = $numberToWords->getNumberTransformer('pl');
 
     $priceExpld = explode(".", $price);
-/*TODO w przypadku 0zł/0gr ((substr($priceExpld[0], -1) == '0') nie wczytywało zmiennej '0' więc zmieniłem kod na:
-if ($priceExpld[0] == '0'){
-        $priceFirstVal = 'zero złotych';
-Takie rozwiązanie jest OK?
 
- */
     if ($priceExpld[0] == '0'){
         $priceFirstVal = 'zero złotych';
     } elseif($priceExpld[0] == '1') {
@@ -157,10 +152,8 @@ Takie rozwiązanie jest OK?
         " " . $priceSecondVal;
 //    var_dump($priceSecondPrt);
 
-//TODO Czy poprawnie dodałem style.css w tabeli?
     $ticket = <<<EOL
 
-<link rel='stylesheet' href='css/style.css'>
     <table>
         <tr>
             <th scope='col' 
@@ -211,10 +204,10 @@ Takie rozwiązanie jest OK?
 
 EOL;
 
-
-
-
     $mpdf = new mPDF();
+
+    $stylesheet = file_get_contents('css/style.css');
+    $mpdf->WriteHTML($stylesheet,1);
 
     if ($_POST['option'] === 'show') {
         $mpdf->WriteHTML($ticket);
