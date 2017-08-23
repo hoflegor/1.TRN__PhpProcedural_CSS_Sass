@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
 //    Sprawdzanie opcji
-    if (!isset($_POST['option'])){
+    if (!isset($_POST['option'])) {
         echo "<h2>* Nie wybrano sposobu wygenerowania biletu!!!</h2>";
     }
 //    var_dump($_POST['option']);
@@ -119,9 +119,9 @@ if (isset($departure)
 
     $priceExpld = explode(".", $price);
 
-    if ($priceExpld[0] == '0'){
+    if ($priceExpld[0] == '0') {
         $priceFirstVal = 'zero złotych';
-    } elseif($priceExpld[0] == '1') {
+    } elseif ($priceExpld[0] == '1') {
         $priceFirstVal = 'złoty';
     } elseif (substr($priceExpld[0], -1) == '2'
         || substr($priceExpld[0], -1) == '3'
@@ -132,9 +132,9 @@ if (isset($departure)
         $priceFirstVal = 'złotych';
     }
 
-    if ($priceExpld[1] == '0'){
+    if ($priceExpld[1] == '0') {
         $priceSecondVal = 'zero groszy';
-    } elseif($priceExpld[1] == '1') {
+    } elseif ($priceExpld[1] == '1') {
         $priceSecondVal = 'grosz';
     } elseif (substr($priceExpld[1], -1) == '2'
         || substr($priceExpld[1], -1) == '3'
@@ -157,7 +157,8 @@ if (isset($departure)
     <table>
         <tr>
             <th scope='col' 
-            colspan='2'><h1><ins><em>Bilet lotniczy</em></ins></h1></th>
+            colspan='2'><h1><ins><em>hoflegorAirlines</em></ins>
+            <br>bilet lotniczy</h1></th>
         </tr>
         <tr>
             <th id='halfWidth' scope='col'><ins>Lotnisko wylotu<br>(kod 
@@ -201,13 +202,13 @@ if (isset($departure)
             <td colspan='2'>$passanger</td>
         </tr>
     </table>
-
+    
 EOL;
 
     $mpdf = new mPDF();
 
     $stylesheet = file_get_contents('css/style.css');
-    $mpdf->WriteHTML($stylesheet,1);
+    $mpdf->WriteHTML($stylesheet, 1);
 
     if ($_POST['option'] === 'show') {
         $mpdf->WriteHTML($ticket);
