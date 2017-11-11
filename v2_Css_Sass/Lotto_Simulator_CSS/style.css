@@ -1,0 +1,19 @@
+html,
+body {
+  height: 100%; }
+
+body {
+  background-image: linear-gradient(to bottom, #fceabb, #f8b500); }
+
+div {
+  display: inline-block;
+  border: 0.2em solid darkslategrey;
+  border-radius: 100%;
+  background-color: #FFD700;
+  padding: 0.4em;
+  margin: 0.5em;
+  width: 2em;
+  height: 2em;
+  text-align: center; }
+
+/*# sourceMappingURL=style.css.map */
