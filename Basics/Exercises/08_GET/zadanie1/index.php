@@ -1,21 +1,21 @@
 <!doctype html>
-<html lang="pl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
-    <title>Symulator Lotto</title>
+    <title>Zadanie 1</title>
 </head>
 <body>
-
-    <h1>Symulator Lotto</h1>
-    <h3>Wybierz 6 liczb z zakresu od 1 do 49</h3>
-    <?php
-    require_once (__DIR__ . '/form.php');
-    ?>
+<?php
+foreach (range(1,3) as $i){
+    foreach (range(4,6) as $j) {
+        echo "<a href='numbers.php?start=$i&end=$j'> Lit from $i to $j.</a><br />";
+    }
+}
+//tutaj wygeneruj kilka linków
+//możesz to zrobić z użyciem pętli
+?>
 </body>
 </html>
-
-

@@ -1,0 +1,31 @@
+<?php
+// tutaj umieść kod wczytujący wartośc z ciasteczka
+//pamiętaj o sprawdzeniu czy ciasteczko istnieje i wyświetleniu odpowiedniego komunikatu jeśli nie
+if(isset($_COOKIE['User'])){
+    $user = $_COOKIE['User'];
+}else {
+    echo "Ni ma ciacha takowego...";
+}
+?>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<?php
+if(isset($_COOKIE['User']))
+{
+
+echo "<h1>Wartość wczytana z ciasteczka to: $user</h1>";
+
+
+}
+
+?>
+</body>
+</html>

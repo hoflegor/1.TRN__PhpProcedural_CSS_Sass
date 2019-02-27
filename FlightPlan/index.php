@@ -5,17 +5,16 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
-    <title>Symulator Lotto</title>
+    <title>Flights reservations</title>
+
 </head>
 <body>
+<h1><em>Rezarwacja biletów lotniczych</em></h1>
+<?php
 
-    <h1>Symulator Lotto</h1>
-    <h3>Wybierz 6 liczb z zakresu od 1 do 49</h3>
-    <?php
-    require_once (__DIR__ . '/form.php');
-    ?>
+require_once('includes/visits.php');
+require_once('includes/form.php');
+
+?>
 </body>
 </html>
-
-

@@ -1,0 +1,1 @@
+>Do tego katalogu dodaj pliki głównej struktury strony

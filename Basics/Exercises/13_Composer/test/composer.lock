@@ -1,0 +1,69 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "84135eeb5d2fe762691ff5187131766d",
+    "packages": [
+        {
+            "name": "kwn/number-to-words",
+            "version": "1.3.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kwn/number-to-words.git",
+                "reference": "335ef2412c35e9325e54ea8aab18119bec5d7305"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kwn/number-to-words/zipball/335ef2412c35e9325e54ea8aab18119bec5d7305",
+                "reference": "335ef2412c35e9325e54ea8aab18119bec5d7305",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "~0.4.0",
+                "phpmd/phpmd": "~2.6.0",
+                "phpunit/phpunit": "~4.8.0",
+                "squizlabs/php_codesniffer": "~2.9.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "NumberToWords\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Karol Wnuk",
+                    "email": "k.wnuk@ascetic.pl"
+                }
+            ],
+            "description": "Multi language standalone PHP number to words converter. Fully tested, open for extensions and new languages.",
+            "keywords": [
+                "angle",
+                "currency",
+                "money",
+                "number",
+                "string",
+                "to",
+                "words"
+            ],
+            "time": "2017-05-13T19:42:46+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

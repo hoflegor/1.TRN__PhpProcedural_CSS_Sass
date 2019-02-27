@@ -1,0 +1,5 @@
+{
+    "require": {
+        "mpociot/vat-calculator": "^2.2"
+    }
+}

@@ -1,0 +1,6 @@
+{
+    "name": "root/test",
+    "require": {
+        "kwn/number-to-words": "^1.2"
+    }
+}

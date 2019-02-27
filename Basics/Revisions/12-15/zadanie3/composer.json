@@ -1,0 +1,5 @@
+{
+    "require": {
+        "andrejsstepanovs/business-days-calculator": "^1.0"
+    }
+}

@@ -1,21 +1,22 @@
 <!doctype html>
-<html lang="pl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
-    <title>Symulator Lotto</title>
+    <title>Zadanie 5</title>
 </head>
 <body>
+<?php
+//tutaj wygeneruj kilka linków
+//możesz to zrobić z użyciem pętli
 
-    <h1>Symulator Lotto</h1>
-    <h3>Wybierz 6 liczb z zakresu od 1 do 49</h3>
-    <?php
-    require_once (__DIR__ . '/form.php');
-    ?>
+for ($i=1980; $i<=2010; $i++){
+    echo "<a href='birthYear.php?year=$i'
+>$i</a><br>";
+}
+
+?>
 </body>
 </html>
-
-
